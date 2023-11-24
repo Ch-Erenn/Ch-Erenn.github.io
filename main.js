@@ -53,7 +53,7 @@ function sendMetrics() {
   let metrics = getMetrics();
 
   // Sending metrics to the server using Fetch API
-  fetch('/api', {
+  fetch('http://localhost:3000/api', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
