@@ -42,7 +42,7 @@ app.post('/api/storeQoS', (req, res) => {
 });
 
 // Endpoint to retrieve QoS data
-app.get('/api/getQoS', (req, res) => {
+app.get('/api/QoS', (req, res) => {
   // Retrieve data from MongoDB
   db.collection('qosData').find({}).toArray((err, result) => {
     if (err) return res.status(500).send('Error retrieving QoS data');
