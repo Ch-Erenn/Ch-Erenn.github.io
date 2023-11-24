@@ -2,7 +2,4 @@
 //*.png
 
 //MP4
-//*.mp4
-
-//Server file
-server.js
+server/videos/movie.mp4
