@@ -1,3 +1,3 @@
 # Multimedia QoE Analysis
 
-* Web page: https://Ch-Erenn.github.io/multimedia-qoe-analysis/
+* Web page: https://ch-erenn.github.io/multimedia-qoe-analysis/
