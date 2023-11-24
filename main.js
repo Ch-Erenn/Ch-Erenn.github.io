@@ -1,4 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 // Get the video element
 const video = document.getElementById('video-player');
@@ -133,4 +132,3 @@ function getQoSData() {
 
 // Call the function to get QoS data
 getQoSData();
-
