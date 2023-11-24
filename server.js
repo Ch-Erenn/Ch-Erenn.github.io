@@ -32,7 +32,7 @@ MongoClient.connect(mongoURI, {serverSelectionTimeoutMS: 5000})
   });
 
 // Endpoint to store QoS parameters
-app.post('/api/storeQoS', (req, res) => {
+app.post('http://localhost:3000/api/storeQoS', (req, res) => {
   const qosData = req.body; // Data sent from the client
   // Store data in MongoDB
   db.collection('qosData').insertOne(qosData, (err, result) => {
@@ -42,7 +42,7 @@ app.post('/api/storeQoS', (req, res) => {
 });
 
 // Endpoint to retrieve QoS data
-app.get('/api/getQoS', (req, res) => {
+app.get('http://localhost:3000/api/getQoS', (req, res) => {
   // Retrieve data from MongoDB
   db.collection('qosData').find({}).toArray((err, result) => {
     if (err) return res.status(500).send('Error retrieving QoS data');
