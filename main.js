@@ -48,9 +48,28 @@ function getMetrics() {
   };
 }
 
+// Function to get the survey answers
+function getSurveyAnswers() {
+  // Retrieve survey answers from your HTML form
+  const surveyForm = document.getElementById('surveyForm');
+  const formData = new FormData(surveyForm);
+
+  // Convert FormData to JSON
+  const surveyAnswers = {};
+  formData.forEach((value, key) => {
+    surveyAnswers[key] = value;
+  });
+
+  return surveyAnswers;
+}
+
 // Function to send metrics to your server
 function sendMetrics() {
-  let metrics = getMetrics();
+
+  const dataToSend = {
+    metrics: metrics,
+    surveyAnswers: surveyAnswers,
+  };
 
   // Sending metrics to the server using Fetch API
   fetch('http://localhost:3000/api', {
@@ -58,17 +77,17 @@ function sendMetrics() {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(metrics),
+    body: JSON.stringify(dataToSend),
   })
   .then(response => {
     if (response.ok) {
-      console.log('Metrics sent successfully!');
+      console.log('Data sent successfully!');
     } else {
-      console.error('Failed to send metrics.');
+      console.error('Failed to send data.');
     }
   })
   .catch(error => {
-    console.error('Error sending metrics:', error);
+    console.error('Error sending data:', error);
   });
 }
 

@@ -31,13 +31,13 @@ MongoClient.connect(mongoURI, {serverSelectionTimeoutMS: 5000})
     console.error('Error connecting to MongoDB:', err);
   });
 
-// Endpoint to store QoS parameters
-app.post('/api', (req, res) => {
-  const qosData = req.body; // Data sent from the client
+// Endpoint to store metrics and survey answers
+app.post('/api/storeData', (req, res) => {
+  const data = req.body; // Data sent from the client
   // Store data in MongoDB
-  db.collection('qosData').insertOne(qosData, (err, result) => {
-    if (err) return res.status(500).send('Error storing QoS parameters');
-    res.status(200).send('QoS parameters stored successfully');
+  db.collection('userData').insertOne(data, (err, result) => {
+    if (err) return res.status(500).send('Error storing data');
+    res.status(200).send('Data stored successfully');
   });
 });
 
