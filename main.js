@@ -86,11 +86,11 @@ const interval = setInterval(() => {
   }
 }, 5000);
 
-/*
+
 // Function to get QoS data
 function getQoSData() {
   // Make a GET request to the server endpoint
-  fetch('/api')
+  fetch('http://localhost:3000/api')
     .then(response => {
       // Check if the response status is OK (200)
       if (!response.ok) {
@@ -112,4 +112,4 @@ function getQoSData() {
 
 // Call the function to get QoS data
 getQoSData();
-*/
+
