@@ -53,7 +53,7 @@ function sendMetrics() {
   let metrics = getMetrics();
 
   // Sending metrics to the server using Fetch API
-  fetch('http://localhost:3000/api', {
+  fetch('/api', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ const interval = setInterval(() => {
 // Function to get QoS data
 function getQoSData() {
   // Make a GET request to the server endpoint
-  fetch('/api/getQoS')
+  fetch('/api')
     .then(response => {
       // Check if the response status is OK (200)
       if (!response.ok) {
