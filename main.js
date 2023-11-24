@@ -7,6 +7,8 @@ let bufferingEvents = 0;
 let stallings = 0;
 let loadStartTime = Date.now();
 
+
+
 // Event listener for when the video starts playing
 video.addEventListener('playing', function() {
   if (initialDelay === null) {
@@ -88,7 +90,7 @@ const interval = setInterval(() => {
 // Function to get QoS data
 function getQoSData() {
   // Make a GET request to the server endpoint
-  fetch('http://localhost:3000/api/getQoS')
+  fetch('/api/getQoS')
     .then(response => {
       // Check if the response status is OK (200)
       if (!response.ok) {
