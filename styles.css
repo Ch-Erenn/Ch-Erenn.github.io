@@ -43,3 +43,19 @@ footer{
     width: 24px;
     height: 24px;
 }
+
+#surveyForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap:30px
+}
+
+.question{
+    text-align: center;
+}
+
+.qHeader{
+    font:22px bolder
+}

@@ -42,7 +42,7 @@ function getMetrics() {
     currentTime: currentTime,
     bufferedTime: bufferedTime,
     resolution: resolution,
-    date: `${date.getDate()-(date.getMonth()+1)}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`
+    date: `${date.getDate()}-${(date.getMonth()+1)}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`
   };
 }
 
@@ -51,7 +51,7 @@ function sendMetrics() {
   let metrics = getMetrics();
 
   // Sending metrics to the server using Fetch API
-  fetch('http://localhost:3000/api/storeQoS', {
+  fetch('http://localhost:3000/api', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
