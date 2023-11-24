@@ -69,7 +69,7 @@ function getSurveyAnswers() {
 function sendMetrics() {
 
   const dataToSend = {
-    metrics: metrics,
+    metrics: getMetrics(),
     surveyAnswers: surveyAnswers,
   };
 
